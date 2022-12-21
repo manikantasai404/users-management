@@ -1,0 +1,212 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_GnWcUDjivfhPobj3",
+        "type": "tab",
+        "createdDate": "2022-08-23T06:04:24.446Z",
+        "relativeParentPath": "users",
+        "label": "employees",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "employees"
+    },
+    {
+        "id": "sd_CquVFtqXwnFeEfha",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_GnWcUDjivfhPobj3",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "usersdb",
+        "databaseConfig": "sd_Aiz2P41UMp1wA0mL",
+        "collection": "\"users\"",
+        "options": "",
+        "resultMapping": "bh.input.result",
+        "operation": "insertOne",
+        "argumentArray": [
+            "document"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.input.body",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "usersdb",
+        "category": "Storage",
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "str",
+                "value": "users",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.input",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "document": {
+                "type": "bh.input",
+                "value": "body",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 265,
+        "y": 120,
+        "wires": [
+            [
+                "sd_0wfx5x57uag5vJDQ"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_0wfx5x57uag5vJDQ",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_GnWcUDjivfhPobj3",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.body,bh.input.result)",
+        "functionName": "sd_0wfx5x57uag5vJDQ",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 365,
+        "y": 120,
+        "wires": [
+            [
+                "sd_Hi1rNeOmrzQAStDh"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_Hi1rNeOmrzQAStDh",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_GnWcUDjivfhPobj3",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.input",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.input.result",
+            "send": "bh.input.result"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_Hi1rNeOmrzQAStDh",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 465,
+        "y": 120,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_LbdJEQETVKDO2cC2",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_GnWcUDjivfhPobj3",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "postemployee",
+        "path": "/postemployee",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/postemployee": {
+                "post": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 125,
+        "y": 120,
+        "wires": [
+            [
+                "sd_CquVFtqXwnFeEfha"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "employees",
+        "functionName": "sd_LbdJEQETVKDO2cC2"
+    }
+]

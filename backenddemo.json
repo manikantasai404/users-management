@@ -1,0 +1,13 @@
+{
+    "displayName": "backenddemo",
+    "appName": "backenddemo",
+    "description": "demo purpose",
+    "lastModified": "2022-08-23T05:21:53.877Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2022-08-23T05:21:52.953Z",
+    "analyticsId": "1733f3fb-0bb6-25ed-a41f-8251d6ffbfe1",
+    "createdStudioVersion": "7.9.0"
+}
